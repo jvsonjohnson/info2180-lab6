@@ -65,8 +65,18 @@ $superheroes = [
 
 ?>
 
+
+
 <ul>
+
+
     <?php foreach ($superheroes as $superhero) : ?>
-        <li><?= $superhero['alias']; ?></li>
+        <? if ($_GET['input_vaue'] == $superhero['alias']) : ?>
+            <h3><? $superhero['alias'] ?></h3>
+            <h4><? $superhero['name'] ?></h4>
+            <p><? $superhero['biography'] ?></p>
+        <? else : ?>
+            <p>Superhero not found</p>
+        <? endif; ?>
     <?php endforeach; ?>
 </ul>

@@ -7,22 +7,29 @@
     <title>Info2180-Lab6</title>
     <link rel="stylesheet" href="style.css" />
     <script src="app.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <main>
       <h1 class="title">AVENGERS CHARACTER SEARCH</h1>
-      <div class="search-btn">
-        <button class="btn btn-primary">
-          Search
-        </button>
+      <div class="search-area">
+        <form action="superheroes.php" method="GET">
+          <input
+            type="text"
+            id="txtBox"
+            name="input_value"
+            placeholder="e.g Captain America or Steve Rogers"
+          />
+        </form>
+        <input
+          type="submit"
+          id="btnSearch"
+          name="submit"
+          value="Search"
+          class="btn btn-primary"
+        />
+        <br />
       </div>
-
-      <div id="result"></div>
+      <div id="result" class="results"></div>
     </main>
   </body>
 </html>
