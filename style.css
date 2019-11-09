@@ -32,6 +32,19 @@ h1 {
 
 .search-area {
   text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.result-area {
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 50px;
+}
+
+.result-area h2 {
+  font-family: montserrat;
+  font-size: 30px;
 }
 
 #txtBox {
@@ -41,5 +54,19 @@ h1 {
 }
 
 .results {
-  padding: 50px;
+  margin-left: 50px;
+}
+
+.results h3 {
+  font-size: 45px;
+}
+.results h4 {
+  font-size: 18px;
+}
+.results p {
+  font-size: 15px;
+}
+
+.results li {
+  padding: 2px;
 }

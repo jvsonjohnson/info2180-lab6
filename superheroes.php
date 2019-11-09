@@ -68,12 +68,18 @@ $superheroes = [
 
 
 
-<?php foreach ($superheroes as $superhero) : ?>
-    <? if ($_GET['searchValue'] == $superhero['alias']) : ?>
-        <h3><? $superhero['alias'] ?></h3>
-        <h4><? $superhero['name'] ?></h4>
-        <p><? $superhero['biography'] ?></p>
-    <? else : ?>
-        <p>Superhero not found</p>
-    <? endif; ?>
-<?php endforeach; ?>
+<?php if ($_GET['query'] == "") : ?>
+
+    <?php foreach ($superheroes as $superhero) : ?>
+        <li><?= $superhero['alias']; ?></li>
+    <?php endforeach; ?>
+
+<?php else : ?>
+    <?php foreach ($superheroes as $superhero) : ?>
+        <?php if ($_GET['query'] == $superhero['alias']) : ?>
+            <h3><?= $superhero['alias']; ?></h3>
+            <h4><?= $superhero['name']; ?></h4>
+            <p><?= $superhero['biography']; ?></p>
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
