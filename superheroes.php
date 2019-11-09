@@ -68,6 +68,7 @@ $superheroes = [
 
 
 
+
 <?php if ($_GET['query'] == "") : ?>
 
     <?php foreach ($superheroes as $superhero) : ?>
@@ -75,6 +76,11 @@ $superheroes = [
     <?php endforeach; ?>
 
 <?php else : ?>
+    <?php if (!array_key_exists($_GET['query'], $superheroes)) : ?>
+        <strong>
+            <p>SUPERHERO NOT FOUND</p>
+        </strong>
+    <?php endif; ?>
     <?php foreach ($superheroes as $superhero) : ?>
         <?php if ($_GET['query'] == $superhero['alias']) : ?>
             <h3><?= $superhero['alias']; ?></h3>
