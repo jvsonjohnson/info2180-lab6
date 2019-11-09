@@ -1,9 +1,10 @@
 window.onload = function() {
-  var query = document.getElementById("txtBox");
   var btn = document.getElementsByClassName("btn");
   var result = document.getElementById("result");
 
   btn[0].addEventListener("click", function() {
+    let searchValue = document.getElementById("txtBox").value;
+    console.log(searchValue);
     var http = new XMLHttpRequest();
 
     http.onreadystatechange = function() {
@@ -12,7 +13,7 @@ window.onload = function() {
       }
     };
 
-    http.open("GET", "superheroes.php?query=" + query, true);
+    http.open("GET", "superheroes.php?query=" + searchValue, true);
     http.send();
   });
 };
