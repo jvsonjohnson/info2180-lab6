@@ -67,7 +67,8 @@ $superheroes = [
 
 <?php $value = $_GET['query']; ?>
 <?php
-$alias = array_column($superheroes, 'alias') + array_column($superheroes, 'name');
+$alias = array_column($superheroes, 'alias');
+$name = array_column($superheroes, 'name');
 ?>
 
 <?php if ($value == "") : ?>
@@ -77,7 +78,7 @@ $alias = array_column($superheroes, 'alias') + array_column($superheroes, 'name'
     <?php endforeach; ?>
 
 <?php else : ?>
-    <?php if (array_search($value, $alias) == false) : ?>
+    <?php if (array_search($value, $alias) === false && array_search($value, $name) === false) : ?>
         <strong>
             <p>SUPERHERO NOT FOUND</p>
         </strong>
