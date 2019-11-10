@@ -2,10 +2,6 @@ window.onload = function() {
   var btn = document.getElementsByClassName("btn");
   var result = document.getElementById("result");
 
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
   function ucFirstAllWords(str) {
     var pieces = str.split(" ");
     for (var i = 0; i < pieces.length; i++) {
@@ -19,7 +15,7 @@ window.onload = function() {
     let searchValue = document.getElementById("txtBox").value;
     let s_value = ucFirstAllWords(searchValue);
 
-    console.log(searchValue);
+    console.log(s_value);
     var http = new XMLHttpRequest();
 
     http.onreadystatechange = function() {
