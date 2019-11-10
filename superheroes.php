@@ -65,17 +65,19 @@ $superheroes = [
 
 ?>
 
-<?php $value = $_GET['query']; ?>
+<?php $value = filter_var($_GET['query'], FILTER_SANITIZE_STRING); ?>
+
 <?php
 $alias = array_column($superheroes, 'alias');
 $name = array_column($superheroes, 'name');
 ?>
 
-<?php if ($value == "") : ?>
-
-    <?php foreach ($superheroes as $superhero) : ?>
-        <li><?= $superhero['alias']; ?></li>
-    <?php endforeach; ?>
+<ul>
+    <?php if ($value == "") : ?>
+        <?php foreach ($superheroes as $superhero) : ?>
+            <li><?= $superhero['alias']; ?></li>
+        <?php endforeach; ?>
+</ul>
 
 <?php else : ?>
     <?php if (array_search($value, $alias) === false && array_search($value, $name) === false) : ?>

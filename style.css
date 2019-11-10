@@ -32,7 +32,7 @@ h1 {
 
 main {
   display: grid;
-  grid-template-columns: 15% 1fr 15%;
+  grid-template-columns: 30% 1fr 30%;
   grid-template-areas: ". main-content .";
 }
 
